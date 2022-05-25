@@ -1,0 +1,534 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+	<title>Prescribo-meter</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" />
+
+	<!-- Favicons -->
+	<link href="{% static 'img/favicon.png' %}" rel="icon" />
+	<link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+	<link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+	<!-- Template Main CSS File -->
+	<link type="text/css" href="{% static 'css/style_home.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+	<!-- ======= Top Bar ======= -->
+	<div id="topbar" class="d-flex align-items-center fixed-top">
+		<div class="container d-flex justify-content-between">
+			<div class="contact-info d-flex align-items-center">
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top">
+		<div class="container d-flex align-items-center">
+			<h1 class="logo me-auto"><a href="{% url 'index' %}">Prescribo-meter</a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="{% url 'index' %}" class="logo me-auto"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a> -->
+
+			<nav id="navbar" class="navbar order-last order-lg-0">
+				<ul>
+					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+					<li><a class="nav-link scrollto" href="#about">About</a></li>
+					<li><a class="nav-link scrollto" href="#Login">Login</a></li>
+
+					<li><a class="nav-link scrollto" href="#team">Team</a></li>
+					<li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+				</ul>
+				<i class="bi bi-list mobile-nav-toggle"></i>
+			</nav>
+			<!-- .navbar -->
+
+			<a href="{% url 'register' %}" class="register-btn scrollto"><span
+					class="d-none d-md-inline">Register</span>
+			</a>
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex align-items-center">
+		<div class="container">
+			<h1>Enhancing the future of health care</h1>
+			<h2>
+				We revolutionalize prescriptions for 21st century. <br>Try it out soon!
+			</h2>
+			<a href="#Login" class="btn-get-started scrollto">Login</a>
+		</div>
+	</section>
+	<!-- End Hero -->
+
+	<main id="main">
+		<!-- ======= Why Us Section ======= -->
+		<section id="why-us" class="why-us">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 d-flex align-items-stretch">
+						<div class="content">
+							<h3>Why Choose Prescribo-meter?</h3>
+							<p>
+							<ul>
+								<li>We modernize the healthcare industry</li>
+								<li>We offer paperless prescriptions</li>
+								<li>We provide errorless & time-saving prescription generation</li>
+								<li>We also provide you facility to sign prescriptions digitally</li>
+								<br>
+							</ul>
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-8 d-flex align-items-stretch">
+						<div class="icon-boxes d-flex flex-column justify-content-center">
+							<div class="row">
+								<div class="col-xl-4 d-flex align-items-stretch">
+									<div class="icon-box mt-4 mt-xl-0">
+										<i class="bx bx-receipt"></i>
+										<h4>Our Goal</h4>
+										<p>
+											Automate the health industry by generating computerized prescriptions
+										</p>
+									</div>
+								</div>
+								<div class="col-xl-4 d-flex align-items-stretch">
+									<div class="icon-box mt-4 mt-xl-0">
+										<i class="bx bx-cube-alt"></i>
+										<h4>Our Objective</h4>
+										<p>
+											Modernize the healthcare by providing meticulous, automated and paperless
+											prescriptions
+										</p>
+									</div>
+								</div>
+								<div class="col-xl-4 d-flex align-items-stretch">
+									<div class="icon-box mt-4 mt-xl-0">
+										<i class="bx bx-bulb"></i>
+
+										<h4>Our Solution</h4>
+										<p>
+											We generate formatted electronic prescriptions based upon oral dictation
+											from a doctor.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End .content-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Why Us Section -->
+
+		<!-- ======= About Section ======= -->
+		<section id="about" class="about">
+			<div class="container-fluid">
+				<div class="row">
+
+					<!-- Image alignment not proper. Check! -->
+					<!-- <div
+						class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+					</div> -->
+
+					<div
+						class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+						<div class="section-title">
+							<h2 class="text-center">About Us</h2>
+						</div>
+
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
+							<h4 class="title"><a href="#">What do we do?</a></h4>
+							<p class="description">
+								Our system is designed for doctors & physicians for generating accurate & time saving
+								electronic prescriptions. After complete examination of the patient, the doctor can dictate the prescription
+								including symptoms, medicines and suggestions to our system. Prescribo-meter will generate a meticulous and 
+								accurate prescription in seconds & the prescription can also be emailed directly to the patient on 
+								their registered email-id.
+							</p>
+						</div>
+
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-gift"></i></div> -->
+							<h4 class="title"><a href="#">What do you get?</a></h4>
+							<p class="description">
+								You can save your time & make prescriptions effortless. We also provide highly secure digital signature facility to help you generate
+								prescriptions faster, efficient & go paperless! You can easily access patient's previous medical history with the help of our
+								system. We respect your privacy & provide you data confidentiality to enhance your data
+								privacy.
+							</p>
+						</div>
+
+						<div class="icon-box">
+							<!-- <div class="icon"><i class="bx bx-atom"></i></div> -->
+							<h4 class="title"><a href="#">Join us to learn more!</a></h4>
+							<p class="description">
+								We revolusionize the healthcare by generating electronic prescriptions.
+								Click on register to join us today!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End About Section -->
+
+		<!-- ======= Login Section ======= -->
+		<section id="Login" class="Login">
+			<div class="container">
+				<div class="section-title">
+					<h2>Login</h2>
+					<p>Please login into your account.</p>
+				</div>
+
+				<form action="/userLogin" method="post" role="form" class="php-email-form">
+					{% csrf_token %}
+					<div class="text-center">
+						<input type="email" class="form-control" name="username" id="username"
+							placeholder="Your Email Id" data-rule="username" data-msg="Please enter a valid email-id" />
+						<div class="validate"></div>
+						<!-- <input type = "text" name = "username" placeholder="Your Username"> -->
+					</div>
+					<br>
+					<div class="text-center">
+						<input type="password" class="form-control" name="password" id="password"
+							placeholder="Your Password" data-rule="password" data-msg="Enter atleast 8 characters" />
+						<div class="validate"></div>
+						<!-- <input type = "password" name = "password" placeholder="Your Password"> -->
+
+					</div>
+					<br>
+
+					<section id="register" class="register section-bg">
+						<div class="container">
+							<div class="text-center">
+								<input type="submit" value="LOGIN" class="btn rounded-pill px-4">
+								<!-- <button type="submit">Login</button> -->
+								<!-- <a href="{% url 'dashboard' %}" class="btn rounded-pill px-4">Login</a> -->
+							</div>
+						</div>
+						<br>
+						<p class="text-center"><a href="#">Forgot password?</a></p>
+						<p class="text-center"><a href="{% url 'register' %}">New user? Click here</a></p>
+					</section>
+				</form>
+			</div>
+		</section>
+		<!-- End Login Section -->
+
+
+
+		<!-- ======= Team Section ======= -->
+		<section id="team" class="team">
+			<div class="container">
+				<div class="section-title">
+					<h2>Meet our Team</h2>
+					<p>
+						Our team's intellect ideology & consistent efforts has resulted into creation of this exemplary
+						software.
+						<br> We are grateful & thankful to the entire team for their ceaseless support in making this
+						software successfull!!
+					</p>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="member d-flex align-items-start">
+
+							<div class="member-info">
+								<h4>Vaidehi Sadawarte</h4>
+								<p>
+									Ideator<br>
+									Web Developer & Python Developer
+								</p>
+								<div class="social">
+									<a href="#"><i class="ri-github-fill"></i></a>
+
+									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 mt-4 mt-lg-0">
+						<div class="member d-flex align-items-start">
+
+							<div class="member-info">
+								<h4>Keerthana Somisetty</h4>
+								<p>
+									Python Developer<br>
+									Database Expert<br>
+								</p>
+								<div class="social">
+									<a href="#"><i class="ri-github-fill"></i></a>
+
+									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 mt-4">
+						<div class="member d-flex align-items-start">
+
+							<div class="member-info">
+								<h4>Aayushi Sutaria</h4>
+								<p>
+
+									Database expert<br>Django Developer
+								</p>
+								<div class="social">
+									<a href="#"><i class="ri-github-fill"></i></a>
+
+									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 mt-4">
+						<div class="member d-flex align-items-start">
+
+							<div class="member-info">
+								<h4>Hridaya Ingle</h4>
+								<p>
+									Web Developer<br>Python Expert
+								</p>
+								<div class="social">
+									<a href="#"><i class="ri-github-fill"></i></a>
+
+									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Team Section -->
+
+		<!-- ======= Frequently Asked Questions Section ======= -->
+		<section id="faq" class="faq section-bg">
+			<div class="container">
+				<div class="section-title">
+					<h2>Frequently Asked Questions</h2>
+					<p>Go through this section for any doubts/queries</p>
+				</div>
+
+				<div class="faq-list">
+					<ul>
+						<li data-aos="fade-up">
+							<i class="bx bx-help-circle icon-help"></i>
+							<a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">How do I get
+								started?<i class="bx bx-chevron-down icon-show"></i><i
+									class="bx bx-chevron-up icon-close"></i></a>
+							<div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+								<p>In order to join us, kindly register first. Once you are successfully registered,
+									login into your account. Once you login,
+									you can now view your dashboard & start using the system.
+								</p>
+							</div>
+						</li>
+
+						<li data-aos="fade-up" data-aos-delay="100">
+							<i class="bx bx-help-circle icon-help"></i>
+							<a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">ques2 <i
+									class="bx bx-chevron-down icon-show"></i><i
+									class="bx bx-chevron-up icon-close"></i></a>
+							<div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+								<p>ans2</p>
+							</div>
+						</li>
+
+						<li data-aos="fade-up" data-aos-delay="200">
+							<i class="bx bx-help-circle icon-help"></i>
+							<a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">ques3 <i
+									class="bx bx-chevron-down icon-show"></i><i
+									class="bx bx-chevron-up icon-close"></i></a>
+							<div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+								<p>ans3</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- End Frequently Asked Questions Section -->
+
+		<!-- ======= Contact Section ======= -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="section-title">
+					<h2>Contact Us/Feedback</h2>
+					<p>We will be happy to recieve your valuable suggestions & feedback</p>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row mt-5">
+					<div class="col-lg-4">
+						<div class="info">
+							<div class="email">
+								<i class="bi bi-envelope"></i>
+								<h4>Email:</h4>
+								<p>info@prescribometer.com</p>
+							</div>
+
+							<div class="phone">
+								<i class="bi bi-phone"></i>
+								<h4>Call:</h4>
+								<p>+91 55899 55488 </p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-8 mt-5 mt-lg-0">
+						<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+							<div class="row">
+								<div class="col-md-6 form-group">
+									<input type="text" name="name" class="form-control" id="name"
+										placeholder="Your Name" required />
+								</div>
+								<div class="col-md-6 form-group mt-3 mt-md-0">
+									<input type="email" class="form-control" name="email" id="email"
+										placeholder="Your Email" required />
+								</div>
+							</div>
+							<div class="form-group mt-3">
+								<input type="text" class="form-control" name="subject" id="subject"
+									placeholder="Subject" required />
+							</div>
+							<div class="form-group mt-3">
+								<textarea class="form-control" name="message" rows="5" placeholder="Message"
+									required></textarea>
+							</div>
+							<div class="my-3">
+								<div class="loading">Loading</div>
+								<div class="error-message"></div>
+								<div class="sent-message">
+									Your message has been sent. Thank you!
+								</div>
+							</div>
+							<div class="text-center">
+								<button type="submit">Send Message</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Contact Section -->
+	</main>
+	<!-- End #main -->
+
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 footer-contact">
+						<h3>Prescribo-meter</h3>
+						<p>
+							<strong>Phone:</strong> +91 55899 55488<br />
+							<strong>Email:</strong> info@prescribometer.com<br />
+						</p>
+					</div>
+
+					<div class="col-lg-2 col-md-6 footer-links">
+						<h4>Useful Links</h4>
+						<ul>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#">Home</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#">Register</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#Login">Login</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-lg-2 col-md-6 footer-links">
+						<h4>To know more</h4>
+						<ul>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#">Home</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#about">About us</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#team">Team</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-md-6 footer-links">
+						<h4>For more details</h4>
+						<ul>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#">Home</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#contact">Contact us</a>
+							</li>
+							<li>
+								<i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-md-6 footer-links">
+						<h4>Join us Today</h4>
+						<p>Sign in to learn more! <br> <br> We provide software solutions for Heathcare.</p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</footer>
+	<!-- End Footer -->
+
+	<div id="preloader"></div>
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Vendor JS Files -->
+	<script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+	<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+	<!-- <script src="{% static 'vendor/php-email-form/validate.js' %}"></script> -->
+
+	<!-- Template Main JS File -->
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

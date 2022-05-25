@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Registration</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style_home.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info d-flex align-items-center"></div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto">
+                <a href="{% url 'index' %}">Prescribo-meter</a>
+            </h1>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+        <!-- ======= Breadcrumbs Section ======= -->
+        <!-- End Breadcrumbs Section -->
+
+        <section class="inner-page">
+            <div class="container py-3">
+                <section id="register" class="register section-bg">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>Register Yourself</h2>
+                            <p>Fill the below information to register</p>
+                        </div>
+
+                        <!-- {% block content %} -->
+                        <form action="userRegistration" method="post" role="form" class="php-email-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Your Name" data-rule="minlen:4"
+                                        data-msg="Please enter at least 4 chars" />
+                                    <div class="validate"></div>
+                                </div>
+
+                                <div class="col-md-4 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Your Email" data-rule="email"
+                                        data-msg="Please enter a valid email" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="col-md-4 form-group mt-3 mt-md-0">
+                                    <input type="tel" class="form-control" name="contact_no" id=""
+                                        placeholder="Your Phone" data-rule="minlen:4"
+                                        data-msg="Please enter at least 4 chars" />
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-4 form-group mt-3">
+                                    <select name="state" id="state" class="form-select">
+                                        <option value="">Select State</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Andaman and Nicobar Islands">
+                                            Andaman and Nicobar Islands
+                                        </option>
+                                        <option value="Arunachal Pradesh">
+                                            Arunachal Pradesh
+                                        </option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadar and Nagar Haveli">
+                                            Dadar and Nagar Haveli
+                                        </option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
+                                        <option value="Puducherry">Puducherry</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">
+                                            Jammu and Kashmir
+                                        </option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                    </select>
+                                    <div class="validate"></div>
+                                </div>
+
+                                <div class="col-md-4 form-group mt-3">
+                                    <input type="text" name="city" class="form-control" id="city" placeholder="City" />
+                                    <div class="validate"></div>
+                                </div>
+
+                                <div class="col-md-4 form-group mt-3">
+                                    <select name="speciality" id="speciality" class="form-select">
+
+                                        <option value="">Select Speciality</option>
+                                        <option value="Allergist">Allergist</option>
+                                        <option value="Dermatologist">Dermatologist</option>
+                                        <option value="Endocrinologist">Endocrinologist</option>
+                                        <option value="Family Physicians">Family Physicians</option>
+                                        <option value="Gastroenterologist">Gastroenterologist</option>
+                                        <option value="Dietitian">Dietitian</option>
+                                        <option value="Gynecologist">Gynecologist</option>
+                                        <option value="Pediatricians ">Pediatricians </option>
+                                        <option value="Dentist">Dentist</option>
+                                    </select>
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 form-group mt-3">
+                                    <input type="text" name="hospital" class="form-control" id="hospital" placeholder="Hospital / Clinic Name" />
+                                    <div class="validate"></div>
+                                </div>
+
+                                <div class="col-md-4 form-group mt-3">
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="Your password" data-rule="minlen:4"
+                                        data-msg="Please enter at least 4 chars" />
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">
+                                    Your register request has been sent successfully. Thank you!
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <input type="submit" value="Register" class="btn rounded-pill px-4" />
+                            </div>
+
+                        </form>
+                        <!-- {% endblock %} -->
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <!-- End #main -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- <script src="{% static 'vendor/php-email-form/validate.js' %}"></script> -->
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
