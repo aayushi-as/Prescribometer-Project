@@ -1,6 +1,7 @@
 from email import message
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from django.conf import settings
 # from django.core.mail import send_mail
 from django.core.mail import EmailMessage
@@ -19,6 +20,7 @@ import os, sys
 import subprocess
 from datetime import date
 from app.models import Doctor
+import re
 
 
 
@@ -85,10 +87,47 @@ def userLogin(request):
             auth.login(request, user)
             return render(request, 'dashboard.html')
         else:
+            messages.error(request, "Invalid credentials! Try again with correct email id and password")
+            print("Invalid credentials!")
             return redirect('/')
+            
     else:
         return render(request, 'index.html')
 
+# Minimum eight characters, at least one letter and one number
+
+def passwordCheck(request, password):
+    regex = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+    pattern = re.compile(regex)
+    match = re.search(pattern, password)
+
+    if not match:
+        messages.error(request, "Password should contain : minimum eight characters, at least one letter and one number")
+        return 0
+    else:
+        return 1
+
+def textValidation(request, text):
+    regex = "^[a-zA-Z ]*$"
+    pattern = re.compile(regex)
+    match = re.search(pattern, text)
+
+    if not match:
+        messages.error(request, "Only text is allowed!")
+        return 0
+    else:
+        return 1
+
+def contactValidation(request, num):
+    regex = "^\d{10}$"
+    pattern = re.compile(regex)
+    match = re.search(pattern, num)
+
+    if not match:
+        messages.error(request, "Enter contact number properly!")
+        return 0
+    else:
+        return 1
 
 def userRegistration(request):
     if request.method == 'POST':
@@ -102,30 +141,37 @@ def userRegistration(request):
         speciality = request.POST['speciality']
         username = email
         hospital = request.POST['hospital']
+        
+        if((not textValidation(request, name)) or  (not textValidation(request, city)) or (not textValidation(request, hospital))):
+            return render(request, 'register.html')
 
-        user = User.objects.create_user(
-            password=password,
-            email=email,
-            first_name=name,
-            username=username
-        )
+        elif(not contactValidation(request, contact_no)):
+            return render(request, 'register.html')
 
-        user.save()
+        elif(not passwordCheck(request, password)):
+            return render(request, 'register.html')
 
-        doctor = Doctor(d_email=email, d_name=name, d_contactNo=contact_no, state=state, city=city, hospital_name=hospital, specialization=speciality)
-        doctor.save()
+        else:
+            user = User.objects.create_user(
+                password=password,
+                email=email,
+                first_name=name,
+                username=username
+            )
 
-        # speciality_record = Specialization(doctor_id=doctor.doctor_id, description=speciality)
-        # speciality_record.save()
+            user.save()
 
-        print('User created: ', doctor.doctor_id)
-        return redirect('/')
+            doctor = Doctor(d_email=email, d_name=name, d_contactNo=contact_no, state=state, city=city, hospital_name=hospital, specialization=speciality)
+            doctor.save()
 
+            print('User created: ', doctor.doctor_id)
+            return redirect('/')
     else:
         return render(request, 'register.html')
 
 
 def logout(request):
+    print("Logout called")
     auth.logout(request)
     return redirect('/')
 
@@ -151,6 +197,7 @@ def record(request):
 
 def proceed(request):
     return render(request, 'record-proceed.html', {'audio_text': globals()['audio_text']})
+    
 def save_changes(request):
     if request.method == 'GET':
          data = request.GET['fulltextarea']
@@ -329,6 +376,7 @@ def generate(request):
         subprocess.call(['open', 'prescription.pdf'])
 
         mailPrescription()
+        messages.success(request, "Email sent to the patient successfully!")
     return render(request, 'dashboard.html')
 
 def submit_patient(request):
@@ -336,6 +384,4 @@ def submit_patient(request):
         globals()['patient_name'] = request.POST['patient_name']
         globals()['patient_email'] = request.POST['patient_email']
     print("NAME :" +globals()['patient_name'])
-    return render(request, 'dashboard.html')
-
-    # take ctx and azithromycin for asthma
+    return render(request, 'new-patient.html')

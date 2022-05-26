@@ -15,13 +15,17 @@
 	<link href="{% static 'img/favicon.png' %}" rel="icon" />
 	<link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
 
-	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">	<!-- Google Fonts -->
 	<link
 		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet" />
 	<link
 		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Vendor CSS Files -->
 	<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" />
@@ -207,30 +211,23 @@
 					<p>Please login into your account.</p>
 				</div>
 
-				<form action="/userLogin" method="post" role="form" class="php-email-form">
+				<form id="login-form" action="/userLogin" method="post" role="form" class="php-email-form">
 					{% csrf_token %}
 					<div class="text-center">
-						<input type="email" class="form-control" name="username" id="username"
-							placeholder="Your Email Id" data-rule="username" data-msg="Please enter a valid email-id" />
+						{% include 'messages.html' %}
+						<input type="email" class="form-control" name="username" id="username" placeholder="Your Email Id" data-rule="username" required/>
 						<div class="validate"></div>
-						<!-- <input type = "text" name = "username" placeholder="Your Username"> -->
 					</div>
 					<br>
 					<div class="text-center">
-						<input type="password" class="form-control" name="password" id="password"
-							placeholder="Your Password" data-rule="password" data-msg="Enter atleast 8 characters" />
-						<div class="validate"></div>
-						<!-- <input type = "password" name = "password" placeholder="Your Password"> -->
-
+						<input type="password" class="form-control" name="password" id="password" placeholder="Your Password" data-rule="password" required/>
 					</div>
 					<br>
 
 					<section id="register" class="register section-bg">
 						<div class="container">
 							<div class="text-center">
-								<input type="submit" value="LOGIN" class="btn rounded-pill px-4">
-								<!-- <button type="submit">Login</button> -->
-								<!-- <a href="{% url 'dashboard' %}" class="btn rounded-pill px-4">Login</a> -->
+								<input id="user-login" type="submit" value="LOGIN" class="btn rounded-pill px-4">
 							</div>
 						</div>
 						<br>
