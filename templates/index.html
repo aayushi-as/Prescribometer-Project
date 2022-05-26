@@ -156,9 +156,9 @@
 				<div class="row">
 
 					<!-- Image alignment not proper. Check! -->
-					<!-- <div
+					<div
 						class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-					</div> -->
+					</div> 
 
 					<div
 						class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -214,7 +214,14 @@
 				<form id="login-form" action="/userLogin" method="post" role="form" class="php-email-form">
 					{% csrf_token %}
 					<div class="text-center">
-						{% include 'messages.html' %}
+						<!--{% include 'messages.html' %}-->
+						{% for message in messages %}
+<div class="container-fluid p-0">
+<div class="alert {{ message.tags }} alert-dismissible fade show">
+   {{ message }}
+</div>
+</div>
+{% endfor %}
 						<input type="email" class="form-control" name="username" id="username" placeholder="Your Email Id" data-rule="username" required/>
 						<div class="validate"></div>
 					</div>
@@ -260,14 +267,10 @@
 
 							<div class="member-info">
 								<h4>Vaidehi Sadawarte</h4>
-								<p>
-									Ideator<br>
-									Web Developer & Python Developer
-								</p>
 								<div class="social">
-									<a href="#"><i class="ri-github-fill"></i></a>
+									<a href="https://github.com/Vaidehi13"><i class="ri-github-fill"></i></a>
 
-									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+									<a href="https://www.linkedin.com/in/vaidehi-sadawarte-962b25213/"> <i class="ri-linkedin-box-fill"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -278,14 +281,11 @@
 
 							<div class="member-info">
 								<h4>Keerthana Somisetty</h4>
-								<p>
-									Python Developer<br>
-									Database Expert<br>
-								</p>
+								
 								<div class="social">
-									<a href="#"><i class="ri-github-fill"></i></a>
+									<a href="https://github.com/KeerthanaS1999"><i class="ri-github-fill"></i></a>
 
-									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+									<a href="https://www.linkedin.com/in/keerthana-somisetty-661546199/"> <i class="ri-linkedin-box-fill"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -296,14 +296,11 @@
 
 							<div class="member-info">
 								<h4>Aayushi Sutaria</h4>
-								<p>
-
-									Database expert<br>Django Developer
-								</p>
+								
 								<div class="social">
-									<a href="#"><i class="ri-github-fill"></i></a>
+									<a href="https://github.com/aayushi-as"><i class="ri-github-fill"></i></a>
 
-									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+									<a href="https://www.linkedin.com/in/aayushi-sutaria18/"> <i class="ri-linkedin-box-fill"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -314,13 +311,11 @@
 
 							<div class="member-info">
 								<h4>Hridaya Ingle</h4>
-								<p>
-									Web Developer<br>Python Expert
-								</p>
+								
 								<div class="social">
-									<a href="#"><i class="ri-github-fill"></i></a>
+									<a href="https://github.com/HridayaIngle"><i class="ri-github-fill"></i></a>
 
-									<a href="#"> <i class="ri-linkedin-box-fill"></i> </a>
+									<a href="https://www.linkedin.com/in/hridaya-ingle-11418b1a0/"> <i class="ri-linkedin-box-fill"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -355,21 +350,26 @@
 
 						<li data-aos="fade-up" data-aos-delay="100">
 							<i class="bx bx-help-circle icon-help"></i>
-							<a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">ques2 <i
+							<a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Why choose prescribometer? <i
 									class="bx bx-chevron-down icon-show"></i><i
 									class="bx bx-chevron-up icon-close"></i></a>
 							<div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-								<p>ans2</p>
+								<p>Prescribometer is reliable, free of cost and most importantly secure, for giving digital prescriptions 
+									to the patients without the traditional handwritten prescriptions. 
+									This saves a lot of doctors time and effort.</p>
 							</div>
 						</li>
 
 						<li data-aos="fade-up" data-aos-delay="200">
 							<i class="bx bx-help-circle icon-help"></i>
-							<a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">ques3 <i
+							<a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Where can I get detailed steps for 
+								generating prescription?
+								<i
 									class="bx bx-chevron-down icon-show"></i><i
 									class="bx bx-chevron-up icon-close"></i></a>
 							<div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-								<p>ans3</p>
+								<p>Once you register on our website, you'll find a user guide
+									 in the side navigation bar after logging in to your account</p>
 							</div>
 						</li>
 					</ul>

@@ -67,7 +67,7 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
                             <h6> {{user.first_name}}</h6>
-                            <span>Family Physician</span>
+                            <span>{{specialization}}</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -149,7 +149,7 @@
 
                             <!-- <img src="{% static 'img/profile-img.jpg' %}" alt="Profile" class="rounded-circle"> -->
                             <h2> {{user.first_name}}</h2>
-                            <h3>Family Physician</h3>
+                            <h3>{{specialization}}</h3>
                         </div>
                     </div>
 
@@ -191,13 +191,13 @@
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Speciality</div>
-                                        <div class="col-lg-9 col-md-8">Family Physician</div>
+                                        <div class="col-lg-9 col-md-8">{{specialization}}</div>
                                     </div>
 
-                                    <!-- <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Degrees</div>
-                                        <div class="col-lg-9 col-md-8">Doctor of Medicine (MD)</div>
-                                    </div> -->
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Hospital Name</div>
+                                        <div class="col-lg-9 col-md-8">{{hospital_name}}</div>
+                                    </div> 
 
                                     <!-- <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Address</div>
@@ -206,7 +206,7 @@
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Phone</div>
-                                        <div class="col-lg-9 col-md-8"> 486-29071</div>
+                                        <div class="col-lg-9 col-md-8">{{doctor_contact}}</div>
                                     </div>
 
                                     <div class="row">
@@ -214,10 +214,6 @@
                                         <div class="col-lg-9 col-md-8">{{user.email}}</div>
                                     </div>
 
-                                    <!-- <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Daily Timings</div>
-                                        <div class="col-lg-9 col-md-8">Monday to Saturday: 10 AM to 5 PM</div>
-                                    </div> -->
 
                                 </div>
 

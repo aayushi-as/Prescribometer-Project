@@ -65,7 +65,16 @@ def register(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    current_user = request.user
+    email_id = current_user.email
+    
+    doctor = Doctor.objects.filter(d_email=email_id).first()
+
+    doctor_name = doctor.d_name
+    doctor_contact = doctor.d_contactNo
+    hospital_name = doctor.hospital_name
+    specialization = doctor.specialization
+    return render(request, 'profile.html',{'doctor_contact' : doctor_contact,'hospital_name' : hospital_name,'specialization':specialization, 'doctor_name':doctor_name})
 
 
 def dashboard(request):
@@ -368,12 +377,12 @@ def generate(request):
         
         for i in range(0,5):
             pdf.cell(190, 10, txt = "",ln = 1, align = 'C')
-        pdf.image('/home/aayushi/Downloads/signature.png',x = 150, w = 50)
+        pdf.image('C:/Users/Admin/Downloads/signature.png',x = 150, w = 50)
 
         # save the pdf with name .pdf
         pdf.output("prescription.pdf")
-        # os.startfile('prescription.pdf', 'open')
-        subprocess.call(['open', 'prescription.pdf'])
+        os.startfile('prescription.pdf', 'open')
+        #subprocess.call(['open', 'prescription.pdf'])
 
         mailPrescription()
         messages.success(request, "Email sent to the patient successfully!")
